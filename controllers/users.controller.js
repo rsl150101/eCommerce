@@ -49,9 +49,11 @@ class UsersController {
   getUserData = async (req, res, next) => {
     try {
       const userId = res.locals.user.userId;
+      // console.log(res.locals.user);
       const userData = await this.userService.getUserDataById(userId);
       return res.status(200).json({ data: userData });
     } catch (error) {
+      console.log(error);
       return res.status(400).json({
         errorMessage: '회원 정보 조회에 실패하였습니다.',
       });
@@ -137,7 +139,7 @@ class UsersController {
   };
 
   adminUpdateUser = async (req, res, next) => {
-    const { userId } = req.params
+    const { userId } = req.params;
     const { id, nickname, email, address } = req.body;
     const updateUser = await this.userService.updateUser(
       userId,

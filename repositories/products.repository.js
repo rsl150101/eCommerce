@@ -126,7 +126,14 @@ class ProductRepository {
     const products = await Products.findAll();
 
     return products;
-  }
+  };
+  //* Id 로 상품 가져오기
+  findProductById = async (productId) => {
+    const productData = await this.productModel.findOne({
+      where: { productId },
+    });
+    return productData.dataValues;
+  };
 }
 
 module.exports = ProductRepository;

@@ -82,7 +82,6 @@ function updateUser(userId) {
   const nickname = document.getElementById('modify-user-nickname').value;
   const email = document.getElementById('modify-user-email').value;
   const address = document.getElementById('modify-user-address').value;
-  console.log(id, nickname, email, address);
   axios
     .patch(`admin/users/${userId}`, {
       id: id,
@@ -91,7 +90,6 @@ function updateUser(userId) {
       address: address,
     })
     .then((response) => {
-      console.log(response);
       window.location.replace(`/admin-users`);
     })
     .catch((error) => {
@@ -104,7 +102,6 @@ function deleteUser(userId) {
   axios
     .delete(`admin/users/${userId}`)
     .then((response) => {
-      console.log(response);
       window.location.replace(`/admin-users`);
     })
     .catch((error) => {

@@ -73,7 +73,6 @@ function applyProduct() {
       quantity: quantity,
     })
     .then((response) => {
-      console.log(response);
       window.location.replace(`/admin-products`);
     })
     .catch((error) => {
@@ -89,7 +88,6 @@ function deleteProduct(productId, productPhoto) {
       },
     })
     .then((response) => {
-      console.log(response);
       window.location.replace(`/admin-products`);
     })
     .catch((error) => {
@@ -127,7 +125,6 @@ function customModal2(
   document.getElementById('modify-product-quantity').value = quantity;
   document.getElementById('modify-product-participant').value = userCount;
   productModifyModal.show();
-  ;
 }
 
 // 상품 등록 모달창 이미지

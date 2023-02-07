@@ -6,8 +6,6 @@ module.exports = async (req, res, next) => {
   if (!cookie) {
     return res.status(401).json({ message: '로그인 후 이용가능합니다.' });
   }
-  console.log(cookie.split('='));
-  console.log(typeof cookie);
   let [authType, authToken] = cookie.split('=');
   if (authToken.includes('connect.sid') || authToken.includes('basket')) {
     authToken = authToken.split(';')[0];

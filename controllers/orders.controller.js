@@ -6,7 +6,6 @@ class OrderController {
   //* 장바구니에서 선택한 상품 정보 및 유저 정보 가져오기
   getOrder = async (req, res) => {
     const { orderList } = req.session;
-    console.log(res.locals);
     const { userId } = res.locals.user;
     const orderData = await this.orderService.selectBasket(orderList, userId);
     return res.render('order', { orderData });

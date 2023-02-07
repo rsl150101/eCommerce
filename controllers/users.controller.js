@@ -49,7 +49,6 @@ class UsersController {
   getUserData = async (req, res, next) => {
     try {
       const userId = res.locals.user.userId;
-      // console.log(res.locals.user);
       const userData = await this.userService.getUserDataById(userId);
       return res.status(200).json({ data: userData });
     } catch (error) {
@@ -112,7 +111,6 @@ class UsersController {
       let limit = 5;
       let offset = 0 + (req.query.page - 1) * limit;
       const usersInfo = await this.userService.adminFindAllUsers(limit, offset);
-      // console.log(usersInfo)
       return res.status(200).json({
         totalPage: Math.ceil(usersInfo.count / limit),
         data: usersInfo.rows,

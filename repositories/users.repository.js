@@ -96,7 +96,6 @@ class UserRepository {
       limit: limit,
       order: [['createdAt', 'DESC']],
     });
-    // console.log(users)
     return users;
   };
 

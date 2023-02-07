@@ -103,7 +103,6 @@
           type: 'GET',
           url: '/api/auth/logout',
           success: function (response) {
-            console.log(response);
             alert(response.message);
             window.location.href = '/login';
           },

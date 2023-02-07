@@ -15,6 +15,11 @@ class OrderRepository {
       throw error;
     }
   };
+  createOrder = async (dataArr) => {
+    await dataArr.forEach((data) => {
+      this.orderModel.create({ ...data });
+    });
+  };
 }
 
 module.exports = OrderRepository;
